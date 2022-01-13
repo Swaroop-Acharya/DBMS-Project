@@ -1,0 +1,253 @@
+*{
+    font-family: 'Poppins',sans-serif;
+}
+body {
+    background: -webkit-linear-gradient(#71b7e6, #00FFBF);
+}
+
+.navdiv {
+    background: -webkit-linear-gradient(#71b7e6, #00FFBF);
+    height: 100%;
+}
+
+.navbar {
+    display: grid;
+    /* background-color: blue; */
+    height: 80px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr 1fr;
+    border-bottom: 2px solid white;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    font-size: 20px;
+    color: white;
+    /* position: absolute; */
+    grid-column: 1/2;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+}
+
+.links {
+    grid-column: 4/6;
+    /* display:grid; */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.links ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.links a:hover {
+    /* font-size: 22px; */
+    transition: .1s ease-in;
+    /* position: absolute; */
+    opacity: 0.5;
+}
+
+.bodyhead {
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    /* position:absolute; */
+}
+
+.title {
+    text-transform: capitalize;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 150px;
+    font-weight: 900;
+    color: white;
+   
+}
+
+.search {
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    margin-top: 70px;
+    outline: none;
+    font-size: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 100px;
+}
+
+.about {
+    display: flex;
+    margin: 40px;
+    margin-top: 100px;
+    border-bottom: 2px solid white;
+    flex-direction: column;
+}
+
+.about h2 {
+    color: white;
+}
+
+.imagediv {
+    display: flex;
+    margin: 40px;
+}
+
+.images {
+    display: flex;
+    height: 150px;
+    width: 250px;
+    /* margin-right: 20px; */
+    scroll-behavior: smooth;
+    scrollbar-3dlight-color: none;
+    border: 2px solid white;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.imagediv:hover {
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.imagediv :hover ::-webkit-scrollbar {
+    display: none;
+}
+
+.subimagediv {
+    display: flex;
+    height: 300px;
+    width: 500px;
+    border-bottom: 2px solid white;
+    margin-right: 20px;
+    justify-content: center;
+    align-items: initial;
+    flex-direction: column;
+}
+
+.subimagediv p {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.whatwedo {
+    display: flex;
+    margin: 40px;
+    flex-direction: column;
+    border-bottom: 2px solid white;
+}
+
+.whatwedo h2 {
+    color: white;
+    font-family: 'Verdana', sans-serif;
+}
+
+.whatwedo2 {
+    display: flex;
+    margin: 40px;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.contact {
+    display: flex;
+    margin: 40px;
+    flex-direction: column;
+    border-bottom: 2px solid white;
+}
+
+.contact h2 {
+    color: white;
+    text-decoration: none;
+    float: left;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+    border-radius: 100%;
+    width: 20px
+}
+
+.fa-instagram {
+    background-color: rgb(218, 85, 107);
+    color: white;
+    border-radius: 100%;
+    width: 20px
+}
+
+.fa-twitter {
+    background: #8eacee;
+    color: white;
+    border-radius: 100%;
+    width: 20px
+}
+
+.fa-linkedin {
+    background: #1255e4;
+    color: white;
+    border-radius: 100%;
+    width: 20px
+}
+
+.fa-whatsapp {
+    background: #24c231;
+    color: white;
+    border-radius: 100%;
+    width: 20px
+}
+
+.linkcontact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.linkcontact a {
+    margin-right: 40px;
+}
+
+.empty {
+    margin-top: 20px;
+    border-bottom: 2px solid white;
+}
+
+

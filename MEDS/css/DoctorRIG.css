@@ -152,3 +152,11 @@ form .user-details .input-box{
     text-align: center;
     margin: 20px;
 }
+h1{
+    font-size: 100px;
+    color: white;
+}
+p{
+    color: white;
+    font-size: 25px;
+}

@@ -1,0 +1,63 @@
+<<?php 
+
+include 'connection.php';
+
+session_start();
+
+error_reporting(0);
+
+if (isset($_SESSION['D_NAME'])) {
+    header("Location: welcome.php");
+}
+
+if (isset($_POST['submit'])) {
+	$email = $_POST['email'];
+	$password = md5($_POST['password']);
+
+	$sql = "SELECT * FROM doctor WHERE email='$email' AND password='$password'";
+	$result = mysqli_query($con, $sql);
+	if ($result->num_rows > 0) {
+		$row = mysqli_fetch_assoc($result);
+		$_SESSION['D_NAME'] = $row['D_NAME'];
+		header("Location: welcome.php");
+	} else {
+		echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
+	}
+}
+
+?>
+
+
+
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>DOCTOR LOGIN</title>    
+    <link rel="stylesheet" type="text/css" href="css/login.css">    
+</head>    
+<body>    
+    <h1 style="color:#fff;text-align:center;">DOCTOR LOGIN</h1><br>    
+    <div class="login">    
+    <form id="login" method="POST" >    
+        <label><b>Email     
+        </b>    
+        </label>    
+        <input type="email" name="email" id="Uname" value="<?php echo $email; ?>" placeholder="Email" required>    
+        <br><br>    
+        <label><b>Password     
+        </b>    
+        </label>    
+        <input type="Password" name="password" id="Pass"  value="<?php echo $_POST['password']; ?>" placeholder="Password" required>    
+        <br><br>    
+        <input type="submit" name="submit" id="log" value="SIGN IN">       
+        <br><br>    
+        <input type="checkbox" id="check">    
+        <span>Remember me</span>    
+        <br><br>    
+        <a class="left" href="#">Forgot Password?</a>  <br>  
+        <a  class="right" href="DoctorRIG.php">Create an new account</a>    
+    </form>     
+</div>    
+</body>    
+</html> 
+
