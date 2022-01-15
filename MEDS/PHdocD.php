@@ -21,7 +21,6 @@
                             <th>CLINIC</th>
                             <th>GENDER</th>
                             <th>PHONE</th>
-                            <th>OPERATION</th>
                         </tr>
                     </thead>
                 </table>
@@ -55,7 +54,6 @@
                  <td> <?php  echo $res['CLINIC'];  ?></td>
                  <td> <?php  echo $res['GENDER'];   ?></td>
                  <td> <?php  echo $res['PHONE'] ;  ?></td>
-                 <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class="fa fa-edit" aria-hidden="true"></i><span>&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><i class="fa fa-trash" aria-hidden="true"></i></td>
              </tr>
            <?php
                 }

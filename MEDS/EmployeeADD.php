@@ -8,7 +8,6 @@
     <title>Employee Admission</title>
     <link rel="stylesheet" href="css/EmployeeADD.css" class="css">
 </head>
-
 <body>
     <div class="left">
         <h1>ADD</h1>
@@ -26,7 +25,7 @@
                         <input type="text" name=" E_NAME" placeholder="Enter employee Name" required>
                     </div>
                     <div class="input-box">
-                        <span class="details">Location</span>
+                        <span class="details">Gender</span>
                         <input type="text" name="GENDER" placeholder="Enter employee Location" required>
                     </div>
                     <div class="input-box">

@@ -1,0 +1,168 @@
+body {
+    background: -webkit-linear-gradient(#71b7e6, #00FFBF);
+}
+
+.navdiv {
+    background: -webkit-linear-gradient(#71b7e6, #00FFBF);
+    height: 100%;
+}
+
+.navbar {
+    display: grid;
+    /* background-color: blue; */
+    height: 80px;
+    width: 100%;
+    margin-top: 6px;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 2fr 2fr 2fr 5fr 32px;
+    /* border-bottom: 2px solid white; */
+    box-shadow: 0px 0px 20px 0px rgb(79, 129, 129);
+}
+
+h3{
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 15px;
+    font-family: 'Poppins',sans-serif;
+    margin-left: 19px;
+  }
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Audiowide", sans-serif;
+    font-size: 20px;
+    color: white;
+    /* position: absolute; */
+    grid-column: 1/2;
+}
+
+.logo .logoa {
+    text-decoration: none;
+    color: white;
+}
+
+.links {
+    grid-column: 4/6;
+    /* display:grid; */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.links .ullists {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.links .link1 {
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+    font-size: 20px;
+    position: absolute;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.links .link1:hover {
+    /* font-size: 22px; */
+    transition: .1s ease-in;
+    /* position: absolute; */
+    opacity: 0.5;
+}
+
+.appdiv{
+    display: flex;
+    height: 400px;
+    width: 60%;
+    justify-content: center;
+    align-content: center;
+    border: 2px solid white;
+    /* margin-left: 240px; */
+    margin-top: -56px;
+    /* padding: 20px; */
+    box-shadow: 1px 1px 20px 1px rgb(79, 129, 129);
+    flex-direction: column;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+.appdiv h1{
+    color:white;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-left:50px;
+}
+
+.appdiv .search1{
+    height: 40px;
+    width:550px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    margin-left:40px;
+    margin-top:20px;
+    font-size: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 100px;
+    box-shadow: 1px 1px 20px 1px rgb(79, 129, 129);
+}
+
+.appoint{
+    margin: 30px;
+    margin-top: 100px;
+    height: 100vh;
+    /* border-top: 2px solid white; */
+    /* padding: 30px; */
+    /* padding-top: 60px; */
+    margin-left: 60px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-content: center;
+    justify-content: space-between;
+    color: white;
+}
+
+ .buttton{
+      /* width: 100px; */
+    /* height: 51px; */
+    width: 120px;
+    height: 20px;
+    padding: 20px;
+    padding-bottom: 35px;
+    border: 2px solid white;
+    border-radius: 30px;
+    background: none;
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-right: -21px;
+    color: #fff;
+    cursor: pointer;
+    /* color: white; */
+    box-shadow: 1px 1px 20px 1px rgb(79, 129, 129);
+    /* background: #fff; */
+    margin-left: -51px;
+}
+
+.appoint button:hover{
+    background: rgb(34, 158, 158);
+}
+
+#logout{
+
+    color: white;
+    text-decoration: none;
+    background-color: #ff5656;
+    padding: 10px;
+    border: 1px solid #fff;
+    /* border-radius: 8px; */
+}

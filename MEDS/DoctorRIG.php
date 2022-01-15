@@ -9,7 +9,7 @@ error_reporting(0);
 session_start();
 
 if (isset($_SESSION['D_NAME'])) {
-    header("Location: login.php");
+    header("Location: Dlogin.php");
 }
 
 //After clicking Submit button the following will be EXECUTED
@@ -101,6 +101,7 @@ if(isset($_POST['submit']))
                 <div class="button">
                     <input type="submit" name="submit" value="Sign Up">
                 </div>
+                <a href="Dlogin.php">Have an account? sign-in here</a>
             </form>
         </div>
     </div>

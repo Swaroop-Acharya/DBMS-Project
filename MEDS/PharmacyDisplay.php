@@ -49,7 +49,7 @@
              <tr>
                  <td> <?php  echo $res['P_NAME'];  ?></td>
                  <td> <?php  echo $res['P_LOCATION'];  ?></td>
-                 <td> <?php  echo $res['EMAIL'];   ?></td>
+                 <td> <?php  echo $res['email'];   ?></td>
                  <td> <?php  echo $res['PHONE'] ;  ?></td>
              </tr>
            <?php

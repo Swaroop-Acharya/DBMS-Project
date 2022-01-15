@@ -3,7 +3,7 @@
 session_start();
 
 if (!isset($_SESSION['D_NAME'])) {
-    header("Location: login.php");
+    header("Location: Dlogin.php");
 }
 
 ?>
@@ -13,9 +13,9 @@ if (!isset($_SESSION['D_NAME'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/welcome.css">
+    <link rel="stylesheet" href="css/Dwelcome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
-    <title>Welcome</title>
+    <title>Doctor Interface</title>
 </head>
 <body>
     <div class="navdiv">
@@ -47,7 +47,7 @@ if (!isset($_SESSION['D_NAME'])) {
         </li>
         <li>
 
-            <a id="logout" href="logout.php">Logout &nbsp&nbsp&nbsp<i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            <a id="logout" href="Dlogout.php">Logout &nbsp&nbsp&nbsp<i class="fa fa-sign-out" aria-hidden="true"></i></a>
         </li>
     </ul>
 </div>

@@ -1,0 +1,195 @@
+
+  body  
+  {  
+      margin: 0;  
+      padding: 0;  
+      background-color:#6abadeba;  
+      font-family: 'Arial'; 
+     background: -webkit-linear-gradient(#71b7e6, #00FFBF);
+      background: linear-gradient(to right, #71b7e6, #00FFBF);
+      font-family: 'Poppins',sans-serif;
+  }  
+  
+.navdiv {
+    background: -webkit-linear-gradient(#71b7e6, #00FFBF);
+}
+
+.navbar {
+    display: grid;
+    /* background-color: blue; */
+    height: 81px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr 43px;
+    box-shadow: 0px 0px 20px 0px rgb(79, 129, 129);;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Audiowide", sans-serif;
+    font-size: 20px;
+    color: white;
+    /* position: absolute; */
+    grid-column: 1/2;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+    margin-bottom: 18px;
+}
+
+.links {
+    grid-column: 4/6;
+    /* display:grid; */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 21px;
+    margin-block-start: 16px;
+}
+
+.links .unlist1 {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.links .list1 {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.links .suplist1 {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.links .list1:hover {
+    /* font-size: 22px; */
+    transition: .1s ease-in;
+    /* position: absolute; */
+    opacity: 0.5;
+}
+
+.suplist1:hover {
+    transition: .1s ease-in;
+    opacity: 0.5;
+}
+
+.dropdiv:hover .hidlist{
+    display:block;
+}
+
+.hidlist{
+    display:flex;
+    height: 100px;
+    width: 120px;
+    position: absolute;
+    margin-top: 25px;
+    /* margin-left: 60px; */
+    /* border:2px solid black; */
+    justify-content: center;
+    /* z-index: 1; */
+    display: none;
+    box-shadow: 0 0 5px 1px rgb(79, 129, 129);
+}
+
+.unlist, .list2{
+    display: flex;
+    flex-direction: column;
+    list-style: none;  
+    text-decoration: none;
+    color:black;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.unlist button{
+    width:120px;
+    margin-left:-40px;
+    height:50px;
+    background-color: aquamarine;
+    border:none;
+    border-bottom:1px solid rgb(160, 157, 157);
+    /* position: absolute; */
+    text-decoration: none;
+    border-radius: 2px;
+    /* border-bottom-left-radius: none;
+    border-bottom-right-radius: none; */
+}
+
+.unlist button:hover{
+    background-color: rgb(218, 214, 214);
+}
+
+  .login{  
+          width: 325px;  
+          overflow: hidden;  
+          margin: auto;  
+          margin: 20 0 0 450px;  
+          padding: 60px;  
+          background: #fff;  
+          border-radius: 15px ; 
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            
+  }  
+  h1{  
+      text-align: center;  
+      color: #fff;
+
+  }  
+  label{  
+      color: rgb(65, 63, 63);
+      font-size: 17px;  
+  }  
+  #Uname{  
+      width: 300px;  
+      height: 30px;  
+      border: none;  
+      border-radius: 3px;  
+      padding-left: 8px;
+      border: 1px solid gray; 
+    }  
+    #Pass{  
+        width: 300px;  
+        height: 30px;  
+        border: none;  
+        border-radius: 3px;  
+        padding-left: 8px;  
+        border: 1px solid gray; 
+        
+  }  
+  #log{  
+      width: 300px;  
+      height: 30px;  
+      border: none;  
+      border-radius: 17px;  
+      padding-left: 7px;  
+      background: linear-gradient(to right, #71b7e6, #00FFBF);
+      color: #fff;
+    
+    
+  }  
+  span{  
+      color: grey;  
+      font-size: 17px;  
+  }  
+  a{  
+      float: right;   
+  } 
+ input[type="submit"]:hover{
+      cursor: pointer;
+  }

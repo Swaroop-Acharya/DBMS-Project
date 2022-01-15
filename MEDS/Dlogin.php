@@ -1,4 +1,4 @@
-<<?php 
+<?php 
 
 include 'connection.php';
 
@@ -7,7 +7,7 @@ session_start();
 error_reporting(0);
 
 if (isset($_SESSION['D_NAME'])) {
-    header("Location: welcome.php");
+    header("Location: Dwelcome.php");
 }
 
 if (isset($_POST['submit'])) {
@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 	if ($result->num_rows > 0) {
 		$row = mysqli_fetch_assoc($result);
 		$_SESSION['D_NAME'] = $row['D_NAME'];
-		header("Location: welcome.php");
+		header("Location: Dwelcome.php");
 	} else {
 		echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
 	}
@@ -33,9 +33,20 @@ if (isset($_POST['submit'])) {
 <html>    
 <head>    
     <title>DOCTOR LOGIN</title>    
-    <link rel="stylesheet" type="text/css" href="css/login.css">    
+    <link rel="stylesheet" type="text/css" href="css/Dlogin.css">    
 </head>    
-<body>    
+<body> 
+<div class="navdiv">
+        <nav class="navbar">
+            <div class="logo">
+                <span>
+                    <h1><a class="list1" href="Home.php">MED</a></h1>
+                </span>
+            </div>
+        
+        </nav>
+</div>
+</div>   
     <h1 style="color:#fff;text-align:center;">DOCTOR LOGIN</h1><br>    
     <div class="login">    
     <form id="login" method="POST" >    

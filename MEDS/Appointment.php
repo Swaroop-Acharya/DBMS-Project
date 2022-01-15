@@ -12,16 +12,16 @@
 <body>
     <section>
         <h1>DOCTORS</h1>
+        <p>To book an Appointment register yourself <a href="PatientRIG.css">Click Here</a></p>
             <div class="tbl-header">
                 <table cellpadding="0" cellspacing="0" border="0" >
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>NAME</th>
                             <th>CLINIC</th>
                             <th>GENDER</th>
                             <th>PHONE</th>
-                            <th>OPERATION</th>
+                            <th>SELECT</th>
                         </tr>
                     </thead>
                 </table>
@@ -49,13 +49,11 @@
                 {
              ?>
              <tr>
-        
-                 <td> <?php  echo $res['D_ID'];   ?></td>
                  <td> <?php  echo $res['D_NAME'];  ?></td>
                  <td> <?php  echo $res['CLINIC'];  ?></td>
                  <td> <?php  echo $res['GENDER'];   ?></td>
                  <td> <?php  echo $res['PHONE'] ;  ?></td>
-                 <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class="fa fa-edit" aria-hidden="true"></i><span>&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><i class="fa fa-trash" aria-hidden="true"></i></td>
+                 <td><a href="BookDOC.php?Did=<?php  echo $res['D_ID'];  ?>">BOOK</a></td>
              </tr>
            <?php
                 }
