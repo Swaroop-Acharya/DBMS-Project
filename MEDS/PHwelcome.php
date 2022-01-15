@@ -60,7 +60,12 @@ if (!isset($_SESSION['P_NAME'])) {
 </div>
 </nav>
 </div>
-<?php echo "<h3>Welcome " . $_SESSION['P_NAME'] . "</h3>"; ?>
+<?php echo "<h3>Welcome " . $_SESSION['P_NAME'] . "</h3>"; ?> 
+<form action="#" method="post">
+    <input class="psubmit " style="float:right;" type="submit"  name="search" value="Search">
+    <input class="psearch " style="float:right;" type="text"  class="search1" placeholder="Search Medicines" name="Pid" id="">
+    <p class="ppara" style="float:right;">Search Prescription</p>
+</form>
 <?php
         include 'connection.php';
 
@@ -72,8 +77,10 @@ if (!isset($_SESSION['P_NAME'])) {
 
         $P_ID=$result['P_ID'];
 
+        $name= $_SESSION['P_NAME'];
+
         //Query to select the Entire table [MAIN QUERY]
-        $selectquery=" select  *  from  pharmacy where P_ID=$P_ID " ; 
+        $selectquery=" select  *  from  pharmacy where P_NAME='$name' " ; 
 
 
 
@@ -112,24 +119,24 @@ if (!isset($_SESSION['P_NAME'])) {
             <?php
         
                 include 'connection.php';
+                
+                $name= $_SESSION['P_NAME'];
 
-                $condition="select * from pharmacy";
+                $condition="select * from pharmacy where P_NAME='$name'";
         
                 $conquery=mysqli_query($con,$condition);
 
                 $result=mysqli_fetch_array($conquery);
 
                 $P_ID=$result['P_ID'];
-                    
-                    
 
                 // Query to select the Entire table [MAIN QUERY]
-                // $selectquery=" select  *  from stocks where P_ID= $P_ID " ; 
+                $selectquery=" select  *  from stocks where P_ID= $P_ID " ; 
 
         
-                $selectquery=" select B.M_ID , B.M_NAME, B.QUANTITY,B.BASE_PRICE
-                from pharmacy A , stocks B
-                where B.P_ID=A.P_ID and B.P_ID=$P_ID";
+                // $selectquery=" select B.M_ID , B.M_NAME, B.QUANTITY,B.BASE_PRICE
+                // from pharmacy A , stocks B
+                // where B.P_ID=A.P_ID and B.P_ID=$P_ID";
         
                 //Executing the QUERY
                 $query=mysqli_query($con,$selectquery);

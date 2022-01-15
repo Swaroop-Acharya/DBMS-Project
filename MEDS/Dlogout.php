@@ -3,6 +3,6 @@
 session_start();
 session_destroy();
 
-header("Location:Dlogin.php");
+header("Location:Home.php");
 
 ?>

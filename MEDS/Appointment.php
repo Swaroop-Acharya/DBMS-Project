@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/DoctorDisplay.css">
 </head>
 <body>
-    <section>
+<section>
         <h1>DOCTORS</h1>
         <p>To book an Appointment register yourself <a href="PatientRIG.css">Click Here</a></p>
             <div class="tbl-header">

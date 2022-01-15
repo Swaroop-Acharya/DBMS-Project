@@ -11,8 +11,6 @@ img{
     border-radius: 10% / 10%;
 }
 body{
-  height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
@@ -151,12 +149,6 @@ form .user-details .input-box{
 .left{
     text-align: center;
     margin: 20px;
-}
-
-
-h1{
-  font-size: 100px;
-  color: white;
 }
 p{
   color: white;

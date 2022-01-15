@@ -15,6 +15,7 @@ if (!isset($_SESSION['PAT_NAME'])) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/DoctorDisplay.css">
     <link rel="stylesheet" href="css/PATwelcome.css" />
     <link
       rel="stylesheet"
@@ -50,31 +51,17 @@ if (!isset($_SESSION['PAT_NAME'])) {
       </nav>
 <?php echo "<h3>Welcome " . $_SESSION['PAT_NAME'] . "</h3>"; ?>
 <form action="" method="post">
-    </div>
-
-
-      <div class="appoint">
-        <h2>Schedule an Appointment now</h2>
-
-        <a href="Appointment.php? id=<?php    echo $_SESSION['PAT_NAME'];   ?>"> <input class="buttton" type="button" value="Shedule"></a>
-      <div class="appdiv">
-        <h1>Get Medicines now</h1>
-        <input type="text"  class="search1" placeholder="Search Medicines" name="M_NAME" id="">
-        <input type="submit"  name="search" value="Search">
-      </div>
-
-    </div>
-  </form>
-    <section>
-        <h1>PHARMACY</h1>
+<section>
+        <h1>DOCTORS</h1>
             <div class="tbl-header">
                 <table cellpadding="0" cellspacing="0" border="0" >
                     <thead>
                         <tr>
                             <th>NAME</th>
-                            <th>LOCATION</th>
+                            <th>CLINIC</th>
+                            <th>GENDER</th>
                             <th>PHONE</th>
-                            <th>EMAIL</th>
+                            <th>SELECT</th>
                         </tr>
                     </thead>
                 </table>
@@ -86,51 +73,39 @@ if (!isset($_SESSION['PAT_NAME'])) {
         
                 include 'connection.php';
         
-                if(isset($_POST['search']))
-                {
-                    //Asigning Variables[php Variables] to the Table variables
-                    $M_NAME=$_POST['M_NAME'];
-
-
-
-                    //Insertion Query [Main-QUERY] for Doctor
-                      $search="select * from stocks where M_NAME='$M_NAME'  ";
-
-                      $squery=mysqli_query($con,$search);
-
-               
-                      $result=mysqli_fetch_array($squery);
-
-                
-                      $P_ID=$result['P_ID'];
-                    
-                       // Query to select the Entire table [MAIN QUERY]
-                       $selectquery=" select  * from pharmacy where P_ID= $P_ID " ; 
-
-
-
-                      //Executing the Query
-                        $query= mysqli_query($con,$selectquery);
         
+        
+                //Query to select the Entire table [MAIN QUERY]
+                $selectquery=" select  *  from  doctor " ; 
+        
+        
+        
+                //Executing the QUERY
+                $query=mysqli_query($con,$selectquery);
         
                 //Iterating through Entire table using while loop
                 //Using MYSQLI Fetch fuction to show that table
                 while($res=mysqli_fetch_array($query))
                 {
-                  ?>
-                  <tr>
-                      <td> <?php  echo $res['P_NAME'];  ?></td>
-                      <td> <?php  echo $res['P_LOCATION'];  ?></td>
-                      <td> <?php  echo $res['PHONE'];  ?></td>
-                      <td> <?php  echo $res['email'];  ?></td>
-                  </tr>
-                <?php
+             ?>
+             <tr>
+                 <td> <?php  echo $res['D_NAME'];  ?></td>
+                 <td> <?php  echo $res['CLINIC'];  ?></td>
+                 <td> <?php  echo $res['GENDER'];   ?></td>
+                 <td> <?php  echo $res['PHONE'] ;  ?></td>
+                 <td><a href="BookDOC.php?Did=<?php  echo $res['D_ID'];  ?>">BOOK</a></td>
+             </tr>
+           <?php
                 }
-              }
                  ?>
             </tbody>
         </table>
     </div>
     </section>
+
+
+
+  </form>
+    
   </body>
 </html>

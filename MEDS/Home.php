@@ -51,7 +51,7 @@
         </form>
 
         <div class="listall">
-          <button  class="list11"><a href="DoctorDisplay.php">List of Doctors</a></button> 
+          <button  class="list11"><a href="PHdocD.php">List of Doctors</a></button> 
           <button class="list11"><a href="PharmacyDisplay.php">List of Pharmacies</a></button>
         </div>
       </div>
