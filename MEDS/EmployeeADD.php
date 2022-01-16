@@ -36,10 +36,6 @@
                         <span class="details">SALARY</span>
                         <input type="text"  name="SALARY" placeholder="Salary" required>
                     </div>
-                    <div class="input-box">
-                        <span class="details">Pharmacy ID</span>
-                        <input type="text" name="P_ID" placeholder="Pharmacy ID" required>
-                    </div>
                 </div>
              
                 <div class="button">
@@ -58,9 +54,22 @@
 
 
 <?php
-
+session_start();
 //Connecting to our DATA base[needmeds]
 include 'connection.php' ;
+
+$phname= $_SESSION['P_NAME'];
+
+
+$query1="select P_ID from pharmacy where P_NAME='$phname' ";
+
+$squery=mysqli_query($con, $query1);
+
+
+$res=mysqli_fetch_array($squery);
+
+
+$P_ID=$res['P_ID'];
 
 //After clicking Submit button the following will be EXECUTED
 if(isset($_POST['submit']))
@@ -70,7 +79,6 @@ if(isset($_POST['submit']))
     $GENDER=$_POST['GENDER'];
     $PHONE=$_POST['PHONE'];
     $SALARY=$_POST['SALARY'];
-    $P_ID=$_POST['P_ID'];
 
     //Insertion Query [Main-QUERY] for table Employee
     $insertquery="insert into employee(E_NAME, GENDER, PHONE,SALARY,P_ID) values('$E_NAME','$GENDER','$PHONE','$SALARY','$P_ID')";

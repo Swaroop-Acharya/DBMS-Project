@@ -119,6 +119,22 @@ if (!isset($_SESSION['P_NAME'])) {
             <?php
         
                 include 'connection.php';
+
+
+                $phname= $_SESSION['P_NAME'];
+
+
+                $query1="select P_ID from pharmacy where P_NAME='$phname' ";
+
+                $squery=mysqli_query($con, $query1);
+
+
+                $res=mysqli_fetch_array($squery);
+
+
+                $P_ID=$res['P_ID'];
+
+
         
                 if(isset($_POST['search']))
                 {
@@ -130,7 +146,7 @@ if (!isset($_SESSION['P_NAME'])) {
                         {
                             $PAT_ID=$_POST['PAT_ID'];
                             
-                            $query="select PR_ID ,PAT_ID,D_ID,M_NAME1,M_NAME2,M_NAME3 from prescription where PAT_ID='$PAT_ID' ";
+                            $query="select PR_ID ,PAT_ID,D_ID,M_NAME1,M_NAME2,M_NAME3 from prescription where PAT_ID='$PAT_ID' and P_ID='$P_ID'  ";
 
                             $selectquery=mysqli_query($con,$query);
 

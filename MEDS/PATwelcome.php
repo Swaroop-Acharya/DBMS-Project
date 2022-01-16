@@ -86,6 +86,7 @@ $_SESSION['patlocation']=$fetch['PAT_LOCATION'];
                             <th>DOSAGE2</th>
                             <th>MEDCINE3</th>
                             <th>DOSAGE3</th>
+                            <th>PRESCIPTION DATE</th>
                         </tr>
                     </thead>
                 </table>
@@ -129,6 +130,7 @@ $_SESSION['patlocation']=$fetch['PAT_LOCATION'];
                                   <td> <?php  echo $res['DOSAGE2'];  ?></td>
                                   <td> <?php  echo $res['M_NAME3'];  ?></td>
                                   <td> <?php  echo $res['DOSAGE3'];  ?></td>
+                                  <td> <?php  echo $res['PR_DATE'];  ?></td>
                               </tr>
                             <?php
                             }

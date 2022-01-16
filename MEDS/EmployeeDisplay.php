@@ -21,7 +21,6 @@
                             <th>GENDER</th>
                             <th>PHONE</th>
                             <th>SALARY</th>
-                            <th>PHARMACY_ID</th>
                             <th>OPERATION</th>
                         </tr>
                     </thead>
@@ -31,13 +30,28 @@
         <table  cellpadding="0" cellspacing="0" border="0">
             <tbody>
             <?php
-        
+            session_start();
                 include 'connection.php';
+
+
+                
+                $phname= $_SESSION['P_NAME'];
+
+
+                $query1="select P_ID from pharmacy where P_NAME='$phname' ";
+
+                $squery=mysqli_query($con, $query1);
+
+
+                $res=mysqli_fetch_array($squery);
+
+
+                $P_ID=$res['P_ID'];
         
         
         
                 //Query to select the Entire table [MAIN QUERY]
-                $selectquery=" select  *  from  employee  " ; 
+                $selectquery=" select  *  from  employee  where P_ID='$P_ID' " ; 
         
         
         
@@ -56,7 +70,6 @@
                  <td> <?php  echo $res['GENDER'];   ?></td>
                  <td> <?php  echo $res['PHONE'] ;  ?></td>
                  <td> <?php  echo $res['SALARY'];  ?></td>
-                 <td> <?php  echo $res['P_ID'];  ?></td>  
                  <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  <a style="color:#00ff00;" title="UPDATE" href="EmpUP.php?id=<?php  echo $res['E_ID'];   ?>"><i class="fa fa-edit" aria-hidden="true"></i></a><span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span> <a title="DELETE" style="color:red;" href="EmpDEL.php?Did=<?php  echo $res['E_ID'];   ?>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
              </tr>
            <?php

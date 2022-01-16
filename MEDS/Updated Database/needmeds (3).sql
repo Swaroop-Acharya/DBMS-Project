@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2022 at 02:52 PM
+-- Generation Time: Jan 16, 2022 at 09:15 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -62,6 +62,14 @@ CREATE TABLE `employee` (
   `P_ID` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `employee`
+--
+
+INSERT INTO `employee` (`E_ID`, `E_NAME`, `GENDER`, `PHONE`, `SALARY`, `P_ID`) VALUES
+(22, 'Harish', 'Male', 108, 2000, 20),
+(23, 'Ramesh', 'male', 108, 3000, 21);
+
 -- --------------------------------------------------------
 
 --
@@ -109,7 +117,7 @@ CREATE TABLE `pharmacy` (
 --
 
 INSERT INTO `pharmacy` (`P_ID`, `P_NAME`, `P_LOCATION`, `email`, `PHONE`, `password`) VALUES
-(20, 'Swaroop Medicals ', 'Banglore', 'swaoop@gmail.com', 108, '1e9410d4e3f4a370f0ad132ae48bee5f'),
+(20, 'Swaroop Medicals ', 'Banglore', 'swaoop@gmail.com', 108, 'a3c65c2974270fd093ee8a9bf8ae7d0b'),
 (21, 'APOLLO Medicals ', 'Manglore', 'apollo108@gmail.com', 9353945, 'a3c65c2974270fd093ee8a9bf8ae7d0b'),
 (22, 'Pooja Medicals', 'HG', 'pooja@gmail.com', 214242, 'b8b4b727d6f5d1b61fff7be687f7970f');
 
@@ -129,16 +137,24 @@ CREATE TABLE `prescription` (
   `DOSAGE2` varchar(100) DEFAULT NULL,
   `M_NAME3` varchar(100) DEFAULT NULL,
   `DOSAGE3` varchar(100) DEFAULT NULL,
-  `P_ID` int(10) NOT NULL
+  `P_ID` int(10) NOT NULL,
+  `PR_DATE` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `prescription`
 --
 
-INSERT INTO `prescription` (`PR_ID`, `D_ID`, `PAT_ID`, `M_NAME1`, `DOSAGE1`, `M_NAME2`, `DOSAGE2`, `M_NAME3`, `DOSAGE3`, `P_ID`) VALUES
-(17, 45, 6, 'as', '1', 'as', '1', 'as', '1', 20),
-(18, 48, 7, 'as', '1', 'as', '1', 'as', '1', 20);
+INSERT INTO `prescription` (`PR_ID`, `D_ID`, `PAT_ID`, `M_NAME1`, `DOSAGE1`, `M_NAME2`, `DOSAGE2`, `M_NAME3`, `DOSAGE3`, `P_ID`, `PR_DATE`) VALUES
+(19, 45, 6, 'as', '1', 'as', '1', 'as', '1', 20, '2022-01-16');
+
+--
+-- Triggers `prescription`
+--
+DELIMITER $$
+CREATE TRIGGER `PRESCRIPTION_DATE` BEFORE INSERT ON `prescription` FOR EACH ROW SET NEW.PR_DATE=CURRENT_DATE
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -160,7 +176,7 @@ CREATE TABLE `stocks` (
 --
 
 INSERT INTO `stocks` (`P_ID`, `S_ID`, `M_ID`, `M_NAME`, `QUANTITY`, `BASE_PRICE`) VALUES
-(20, 'S20', 'M4', 'ASPRINE', ' 200mg ', 360);
+(20, 'S20', 'M4', ' ASPRINE420', '  200mg  ', 360);
 
 --
 -- Indexes for dumped tables
@@ -222,7 +238,7 @@ ALTER TABLE `doctor`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `E_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `E_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `patient`
@@ -240,7 +256,7 @@ ALTER TABLE `pharmacy`
 -- AUTO_INCREMENT for table `prescription`
 --
 ALTER TABLE `prescription`
-  MODIFY `PR_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `PR_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables
