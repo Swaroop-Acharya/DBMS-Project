@@ -22,12 +22,11 @@ if(isset($_POST['submit']))
     $GENDER=$_POST['GENDER'];
     $PAT_LOCATION=$_POST['PAT_LOCATION'];
     $PHONE=$_POST['PHONE'];
-    $P_ID=$_POST['P_ID'];
     $email=$_POST['email'];
     $password=md5($_POST['password']);
 
     //Insertion Query [Main-QUERY] for table Employee
-    $insertquery="insert into patient(PAT_NAME,AGE, GENDER,PAT_LOCATION, PHONE,P_ID,email,password) values(' $PAT_NAME',' $AGE','$GENDER', '$PAT_LOCATION','$PHONE','$P_ID', '$email','$password')";
+    $insertquery="insert into patient(PAT_NAME,AGE, GENDER,PAT_LOCATION, PHONE,email,password) values(' $PAT_NAME',' $AGE','$GENDER', '$PAT_LOCATION','$PHONE', '$email','$password')";
 
     //Executing the Query
    $res= mysqli_query($con,$insertquery);
@@ -94,10 +93,6 @@ if(isset($_POST['submit']))
                     <div class="input-box">
                         <span class="details">Phone</span>
                         <input type="text"  name="PHONE" value="<?php echo $PHONE; ?>" placeholder="Salary" required>
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Pharmacy ID</span>
-                        <input type="text" name="P_ID" value="<?php echo $P_ID; ?>" placeholder="Pharmacy ID" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Email</span>

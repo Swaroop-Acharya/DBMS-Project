@@ -63,9 +63,10 @@ if (!isset($_SESSION['P_NAME'])) {
 <?php echo "<h3>Welcome " . $_SESSION['P_NAME'] . "</h3>"; ?> 
 <form action="#" method="post">
     <input class="psubmit " style="float:right;" type="submit"  name="search" value="Search">
-    <input class="psearch " style="float:right;" type="text"  class="search1" placeholder="Search Medicines" name="Pid" id="">
+    <input class="psearch " style="float:right;" type="text"  class="search1" placeholder="Enter Patient ID" name="PAT_ID" id="">
     <p class="ppara" style="float:right;">Search Prescription</p>
 </form>
+
 <?php
         include 'connection.php';
 
@@ -98,6 +99,60 @@ if (!isset($_SESSION['P_NAME'])) {
             <?php
         }
         ?>
+    <section>
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0" >
+                    <thead>
+                        <tr>
+                            <th>PATIENT ID</th>
+                            <th>DOCTOR ID</th>
+                            <th>MEDCINE1</th>
+                            <th>MEDCINE2</th>
+                            <th>MEDCINE3</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+    <div class="tbl-content2">
+        <table  cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+            <?php
+        
+                include 'connection.php';
+        
+                if(isset($_POST['search']))
+                {
+
+
+                    include 'connection.php';
+
+                        if(isset($_POST['search']))
+                        {
+                            $PAT_ID=$_POST['PAT_ID'];
+                            
+                            $query="select PR_ID ,PAT_ID,D_ID,M_NAME1,M_NAME2,M_NAME3 from prescription where PAT_ID='$PAT_ID' ";
+
+                            $selectquery=mysqli_query($con,$query);
+
+                            while($res=mysqli_fetch_array($selectquery))
+                            {
+                              ?>
+                              <tr>
+                                  <td> <?php  echo $res['PAT_ID'];  ?></td>
+                                  <td> <?php  echo $res['D_ID'];  ?></td>
+                                  <td> <?php  echo $res['M_NAME1'];  ?></td>
+                                  <td> <?php  echo $res['M_NAME2'];  ?></td>
+                                  <td> <?php  echo $res['M_NAME3'];  ?></td>
+                              </tr>
+                            <?php
+                            }
+                        }
+                    }
+                    ?>
+            </tbody>
+        </table>
+    </div>
+    </section>
  <section>
         <h2 style="color:#fff; margin-top:2px; text-align:center">CURRENT STOCK</h2>
             <div class="tbl-header">

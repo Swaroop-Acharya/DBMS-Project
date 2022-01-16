@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+background: linear-gradient(aqua,aquamarine);
+}
+
+
+.container {
+    float: right;
+    border: 3px solid white;
+    border-radius: 5px;
+    height: 526px;
+    width: 575px;
+    background-color: #fff;
+    margin: 49px 424px;
+    padding: 3px 3px;
+    border-radius: 27px;
+}
+
+
+form input {
+    display: block;
+    width: 316px;
+    margin: 4px auto;
+}
+
+.details{
+    margin: 27px 121px;
+}
+
+.title{
+    text-align: center;
+    margin-top: 29px;
+}

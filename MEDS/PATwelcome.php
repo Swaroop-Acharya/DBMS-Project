@@ -1,10 +1,28 @@
 <?php 
 
+include 'connection.php';
 session_start();
 
 if (!isset($_SESSION['PAT_NAME'])) {
     header("Location: PATlogin.php");
 }
+$patname=$_SESSION['PAT_NAME'];
+$gemail="select * from patient where PAT_NAME='$patname' ";
+
+
+$exec=mysqli_query($con,$gemail);
+
+
+$fetch=mysqli_fetch_array($exec);
+
+
+
+$_SESSION['email']=$fetch['email'];
+
+$_SESSION['password']=$fetch['password'];
+$_SESSION['patlocation']=$fetch['PAT_LOCATION'];
+
+
 
 ?>
 
@@ -40,7 +58,12 @@ if (!isset($_SESSION['PAT_NAME'])) {
               <a class="link1" href="PharmacyDisplay.php">Pharmacy</a>
             </li>
             <li id="signid" class="linklist">
-              <a class="link1" href="#">Prescriptions</a>
+              <!-- <a class="link1" name="search" href="#">Prescriptions</a> -->
+              <form action="" method="post">
+
+
+                <input type="submit"  name="search" value="Prescription">
+              </form>
             </li>
             <li>
 
@@ -50,6 +73,72 @@ if (!isset($_SESSION['PAT_NAME'])) {
         </div>
       </nav>
 <?php echo "<h3>Welcome " . $_SESSION['PAT_NAME'] . "</h3>"; ?>
+<section>
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0" >
+                    <thead>
+                        <tr>
+                            <th>PATIENT ID</th>
+                            <th>DOCTOR ID</th>
+                            <th>MEDCINE1</th>
+                            <th>DOSAGE1</th>
+                            <th>MEDCINE2</th>
+                            <th>DOSAGE2</th>
+                            <th>MEDCINE3</th>
+                            <th>DOSAGE3</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+    <div class="tbl-content2">
+        <table  cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+            <?php
+        
+                include 'connection.php';
+               $patn= $_SESSION['PAT_NAME'];
+
+                $query1="select PAT_ID from patient where PAT_NAME='$patn' ";
+                $select=mysqli_query($con, $query1);
+                $arry=mysqli_fetch_array($select);
+
+                $PAT_ID=$arry['PAT_ID'];
+        
+                if(isset($_POST['search']))
+                {
+
+
+                    include 'connection.php';
+                    
+
+                        if(isset($_POST['search']))
+                        {    
+                            $query="select * from prescription where PAT_ID='$PAT_ID' ";
+
+                            $selectquery=mysqli_query($con,$query);
+
+                            while($res=mysqli_fetch_array($selectquery))
+                            {
+                              ?>
+                              <tr>
+                                  <td> <?php  echo $res['PAT_ID'];  ?></td>
+                                  <td> <?php  echo $res['D_ID'];  ?></td>
+                                  <td> <?php  echo $res['M_NAME1'];  ?></td>
+                                  <td> <?php  echo $res['DOSAGE1'];  ?></td>
+                                  <td> <?php  echo $res['M_NAME2'];  ?></td>
+                                  <td> <?php  echo $res['DOSAGE2'];  ?></td>
+                                  <td> <?php  echo $res['M_NAME3'];  ?></td>
+                                  <td> <?php  echo $res['DOSAGE3'];  ?></td>
+                              </tr>
+                            <?php
+                            }
+                        }
+                    }
+                    ?>
+            </tbody>
+        </table>
+    </div>
+    </section>
 <form action="" method="post">
 <section>
         <h1>DOCTORS</h1>
@@ -109,3 +198,4 @@ if (!isset($_SESSION['PAT_NAME'])) {
     
   </body>
 </html>
+

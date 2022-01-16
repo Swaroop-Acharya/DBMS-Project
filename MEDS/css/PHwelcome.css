@@ -237,6 +237,13 @@ h3{
     border: 1px solid rgba(255,255,255,0.3);
     background: #fff;
   }
+  .tbl-content2{
+    height:300px;
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: #fff;
+  }
   th{
     padding: 15px;
     text-align: left;
