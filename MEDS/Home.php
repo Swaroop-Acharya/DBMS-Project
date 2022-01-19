@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/Home.css" />
+  <link rel="stylesheet" href="css/DoctorDisplay.css">
   <link href="doctor/connection.php">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide" />
@@ -47,7 +48,7 @@
 
           <h1 class="title">Search, Get Appointments and Medicines now</h1>
           <input type="text"  class="search1" placeholder="Search Medicines" name="M_NAME" id="">
-          <input type="submit"  name="search" value="Search">
+          <input type="submit" onclick="show_hide()" name="search" value="Search">
         </form>
 
         <div class="listall">
@@ -55,7 +56,7 @@
           <button class="list11"><a href="PharmacyDisplay.php">List of Pharmacies</a></button>
         </div>
       </div>
-      <section>
+      <section id="content">
         <h1>PHARMACY</h1>
             <div class="tbl-header">
                 <table cellpadding="0" cellspacing="0" border="0" >
@@ -75,6 +76,7 @@
             <?php
         
                 include 'connection.php';
+                error_reporting(0);
         
                 if(isset($_POST['search']))
                 {
@@ -224,6 +226,7 @@
   </div>
 
   <div class="scriptdiv"></div>
+  <script src="show.js"></script>
 </body>
 
 </html>
