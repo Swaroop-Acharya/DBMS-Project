@@ -35,7 +35,7 @@ if (!isset($_SESSION['D_NAME'])) {
             </div>
         </li>
         <li class="dropdown">
-            <a class="list1" href="PharmacyDisplay.php">Pharmacy</a>
+            <a class="list1" target=_block href="PharmacyDisplay.php">Pharmacy</a>
         </li>
         <li>
 
@@ -69,28 +69,24 @@ if (!isset($_SESSION['D_NAME'])) {
             <?php
         
                 include 'connection.php';
-
+                //Extracting Doctor name using current session
                 $DOCname=$_SESSION['D_NAME'];
+
+                //QUERY: selecting all the details of Doctor
                 $Demail="select * from doctor where D_NAME='$DOCname' ";
 
 
                 $exec=mysqli_query($con,$Demail);
-
-
                 $fetch=mysqli_fetch_array($exec);
 
-
-
+                //Info for other [login]
                 $_SESSION['email']=$fetch['email'];
-
                 $_SESSION['password']=$fetch['password'];
-
                 $_SESSION['D_ID']=$fetch['D_ID'];
 
-                 $docID=$_SESSION['D_ID'];
 
-
-                //Query to select the Entire table [MAIN QUERY]
+                $docID=$_SESSION['D_ID'];
+                //QUER:Selecting all the Patient Details based on Doctor ID
                 $selectquery=" select  *  from  patient where D_ID='$docID' " ; 
         
         
@@ -110,7 +106,7 @@ if (!isset($_SESSION['D_NAME'])) {
                  <td> <?php  echo $res['GENDER'];  ?></td>
                  <td> <?php  echo $res['PAT_LOCATION'];  ?></td>
                  <td> <?php  echo $res['PHONE'] ;  ?></td>
-                 <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="PRsend.php">New</a></td>
+                 <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a target=_block href="PRsend.php">New</a></td>
              </tr>
            <?php
                 }

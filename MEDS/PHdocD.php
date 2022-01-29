@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>List of Doctors</title>
     <!-- TARSH and EDIT icon pack -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
     <link rel="stylesheet" href="css/DoctorDisplay.css">
 </head>
 <body>
     <section>
-        <h1>DOCTORS</h1>
+        <h1>List of Doctors</h1>
             <div class="tbl-header">
                 <table cellpadding="0" cellspacing="0" border="0" >
                     <thead>

@@ -14,7 +14,9 @@ if (isset($_POST['submit'])) {
 	$email = $_POST['email'];
 	$password = md5($_POST['password']);
 
+//QUERY
 	$sql = "SELECT * FROM doctor WHERE email='$email' AND password='$password'";
+    
 	$result = mysqli_query($con, $sql);
 	if ($result->num_rows > 0) {
 		$row = mysqli_fetch_assoc($result);
@@ -33,7 +35,7 @@ if (isset($_POST['submit'])) {
 <html>    
 <head>    
     <title>DOCTOR LOGIN</title>    
-    <link rel="stylesheet" type="text/css" href="css/Dlogin.css">    
+    <link rel="stylesheet" type="text/css" href="css/PHlogin.css">    
 </head>    
 <body> 
 <div class="navdiv">

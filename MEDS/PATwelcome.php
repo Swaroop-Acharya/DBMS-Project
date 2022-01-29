@@ -35,14 +35,13 @@ $_SESSION['patlocation']=$fetch['PAT_LOCATION'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/DoctorDisplay.css">
     <link rel="stylesheet" href="css/PATwelcome.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Audiowide"
-    />
+    <link href="doctor/connection.php">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="navdiv">
@@ -59,11 +58,6 @@ $_SESSION['patlocation']=$fetch['PAT_LOCATION'];
             </li>
             <li id="signid" class="linklist">
               <!-- <a class="link1" name="search" href="#">Prescriptions</a> -->
-              <form action="" method="post">
-
-
-                <input type="submit"  name="search" value="Prescription">
-              </form>
             </li>
             <li>
 
@@ -73,6 +67,11 @@ $_SESSION['patlocation']=$fetch['PAT_LOCATION'];
         </div>
       </nav>
 <?php echo "<h3>Welcome " . $_SESSION['PAT_NAME'] . "</h3>"; ?>
+<form action="" method="post">
+
+
+               <p>Click refresh button to see your presciption <input type="submit" class="pr"  name="search" value="Refresh">
+              </form>
 <section>
             <div class="tbl-header">
                 <table cellpadding="0" cellspacing="0" border="0" >
@@ -80,13 +79,13 @@ $_SESSION['patlocation']=$fetch['PAT_LOCATION'];
                         <tr>
                             <th>PATIENT ID</th>
                             <th>DOCTOR ID</th>
-                            <th>MEDCINE1</th>
-                            <th>DOSAGE1</th>
-                            <th>MEDCINE2</th>
-                            <th>DOSAGE2</th>
-                            <th>MEDCINE3</th>
-                            <th>DOSAGE3</th>
-                            <th>PRESCIPTION DATE</th>
+                            <th>MEDCINE</th>
+                            <th>DOSAGE</th>
+                            <th>MEDCINE</th>
+                            <th>DOSAGE</th>
+                            <th>MEDCINE</th>
+                            <th>DOSAGE</th>
+                            <th>PR DATE</th>
                         </tr>
                     </thead>
                 </table>

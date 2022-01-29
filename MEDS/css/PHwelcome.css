@@ -7,10 +7,8 @@ body {
     height: 100%;
 }
 .navbar{
-
-    
     display: grid;
-    /* background-color: blue; */
+    background: linear-gradient(to right ,#71b7e6 , #00FFBF);
     height: 81px;
     width: 100%;
     justify-content: center;
@@ -194,13 +192,12 @@ body {
 }
 
 #logout{
-
     color: white;
     text-decoration: none;
     background-color: #ff5656;
     padding: 10px;
-    border: 1px solid #fff;
-    /* border-radius: 8px; */
+    border: 2px solid #fff;
+    border-radius: 3px;
 }
 
 h4{
@@ -238,7 +235,7 @@ h3{
     background: #fff;
   }
   .tbl-content2{
-    height:300px;
+    height:50px;
     overflow-x:auto;
     margin-top: 0px;
     border: 1px solid rgba(255,255,255,0.3);
@@ -316,11 +313,54 @@ h3{
       width: 10px;
   }
 
-  .psearch{
-
-  }
   .ppara{
     float: right;
     margin-top: -24px;
     margin-right: -137px;
+    /* padding-left: 949px; */
+    color: #fff;
+    /* letter-spacing: 3px; */
+    font-weight: 500;
+    float: right;
   }
+
+
+  .psearch{
+    float: right;
+    height: 18px;
+    width: 156px;
+    border-radius: 50px;
+    border: none;
+    /* margin-top: 70px; */
+    outline: none;
+    font-size: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 100px;
+    box-shadow: 1px 1px 20px 1px rgb(79, 129, 129);
+}
+
+
+.psubmit{
+    float: right;
+    height: 41px;
+    width: 80px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: 500;
+    background: white;
+    box-shadow: 1px 1px 20px 1px rgb(79, 129, 129);
+}
+
+.dela{
+    background-color: #ff3131;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 16px;
+    color: white;
+    cursor: pointer;
+}

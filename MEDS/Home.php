@@ -6,10 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/Home.css" />
-  <link rel="stylesheet" href="css/DoctorDisplay.css">
+  <!-- <link rel="stylesheet" href="css/DoctorDisplay.css"> -->
   <link href="doctor/connection.php">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 </head>
 
@@ -24,13 +27,13 @@
       <div class="links">
         <ul class="ullists">
           <li id="doctid" class="linklist">
-            <a class="link1" href="PharmacyRIG.php">Pharmacy</a>
+            <a  class="link1" href="PharmacyRIG.php">Pharmacy</a>
           </li>
-          <li id="pharid" class="linklist">
-            <a class="link1" href="PatientRIG.php">Patient</a>
+          <li target="_blank" id="pharid" class="linklist">
+            <a  class="link1" href="PatientRIG.php">Patient</a>
           </li>
           <li id="signid" class="linklist">
-            <a id="dropalink" class="link1" href="DoctorRIG.php">Doctor</a>
+            <a  id="dropalink" class="link1" href="DoctorRIG.php">Doctor</a>
           </li>
         </ul>
       </div>
@@ -47,83 +50,82 @@
         <form action="" method="post">
 
           <h1 class="title">Search, Get Appointments and Medicines now</h1>
-          <input type="text"  class="search1" placeholder="Search Medicines" name="M_NAME" id="">
-          <input type="submit" onclick="show_hide()" name="search" value="Search">
+          <input type="text" class="search1" placeholder="Search Medicines" name="M_NAME" id="">
+          <a href="#s12">
+          <input type="submit" onclick="show_hide()" name="search" value="Search" class="subbut"></a>
         </form>
 
         <div class="listall">
-          <button  class="list11"><a href="PHdocD.php">List of Doctors</a></button> 
-          <button class="list11"><a href="PharmacyDisplay.php">List of Pharmacies</a></button>
+          <button class="list11"><a target="_blank" href="PHdocD.php">List of Doctors</a></button>
+          <button class="list11"><a target="_blank" href="PharmacyDisplay.php">List of Pharmacies</a></button>
         </div>
       </div>
-      <section id="content">
+      <section class="tablesdiv">
         <h1>PHARMACY</h1>
-            <div class="tbl-header">
-                <table cellpadding="0" cellspacing="0" border="0" >
-                    <thead>
-                        <tr>
-                            <th>NAME</th>
-                            <th>LOCATION</th>
-                            <th>PHONE</th>
-                            <th>EMAIL</th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-    <div class="tbl-content">
-        <table  cellpadding="0" cellspacing="0" border="0">
+        <div class="tbl-header">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <thead id="s12">
+              <tr>
+                <th>NAME</th>
+                <th>LOCATION</th>
+                <th>PHONE</th>
+                <th>EMAIL</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0">
             <tbody>
-            <?php
-        
-                include 'connection.php';
-                error_reporting(0);
-        
-                if(isset($_POST['search']))
-                {
-                    //Asigning Variables[php Variables] to the Table variables
-                    $M_NAME=$_POST['M_NAME'];
+              <?php
+
+              include 'connection.php';
+              error_reporting(0);
+
+              if (isset($_POST['search'])) {
+                //Asigning Variables[php Variables] to the Table variables
+                $M_NAME = $_POST['M_NAME'];
 
 
 
-                    //Insertion Query [Main-QUERY] for Doctor
-                      $search="select * from stocks where M_NAME='$M_NAME'  ";
+                //Insertion Query [Main-QUERY] for Doctor
+                $search = "select * from stocks where M_NAME='$M_NAME'  ";
 
-                      $squery=mysqli_query($con,$search);
-
-               
-                      $result=mysqli_fetch_array($squery);
-
-                
-                      $P_ID=$result['P_ID'];
-                    
-                       // Query to select the Entire table [MAIN QUERY]
-                       $selectquery=" select  * from pharmacy where P_ID= $P_ID " ; 
+                $squery = mysqli_query($con, $search);
 
 
+                $result = mysqli_fetch_array($squery);
 
-                      //Executing the Query
-                        $query= mysqli_query($con,$selectquery);
-        
-        
+
+                $P_ID = $result['P_ID'];
+
+                // Query to select the Entire table [MAIN QUERY]
+                $selectquery = " select  * from pharmacy where P_ID= $P_ID ";
+
+
+
+                //Executing the Query
+                $query = mysqli_query($con, $selectquery);
+
+
                 //Iterating through Entire table using while loop
                 //Using MYSQLI Fetch fuction to show that table
-                while($res=mysqli_fetch_array($query))
-                {
-                  ?>
+                while ($res = mysqli_fetch_array($query)) {
+              ?>
                   <tr>
-                      <td> <?php  echo $res['P_NAME'];  ?></td>
-                      <td> <?php  echo $res['P_LOCATION'];  ?></td>
-                      <td> <?php  echo $res['PHONE'];  ?></td>
-                      <td> <?php  echo $res['email'];  ?></td>
+                    <td> <?php echo $res['P_NAME'];  ?></td>
+                    <td> <?php echo $res['P_LOCATION'];  ?></td>
+                    <td> <?php echo $res['PHONE'];  ?></td>
+                    <td> <?php echo $res['email'];  ?></td>
                   </tr>
-                <?php
+              <?php
                 }
               }
-                 ?>
+              ?>
             </tbody>
-        </table>
-    </div>
-    </section>
+          </table>
+        </div>
+      </section>
       <div class="about">
         <h2>About</h2>
       </div>

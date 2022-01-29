@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
 <html>    
 <head>    
     <title>Patient Sign-in</title>    
-    <link rel="stylesheet" type="text/css" href="css/Dlogin.css">    
+    <link rel="stylesheet" type="text/css" href="css/PHlogin.css">    
 </head>    
 <body> 
 <div class="navdiv">
@@ -64,9 +64,8 @@ if (isset($_POST['submit'])) {
         <br><br>    
         <input type="checkbox" id="check">    
         <span>Remember me</span>    
-        <br><br>    
-        <a class="left" href="#">Forgot Password?</a>  <br>  
-        <a  class="right" href="PatientRIG.php">Create an new account</a>    
+        <br><br>      
+        <a  class="right" href="PatientRIG.php">Create an new account?</a>    
     </form>     
 </div>    
 </body>    

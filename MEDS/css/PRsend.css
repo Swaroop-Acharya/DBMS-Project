@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif
 }
 body{
 background: linear-gradient(aqua,aquamarine);
@@ -12,26 +13,80 @@ background: linear-gradient(aqua,aquamarine);
     float: right;
     border: 3px solid white;
     border-radius: 5px;
-    height: 526px;
+    height: 106%;
     width: 575px;
     background-color: #fff;
-    margin: 49px 424px;
+    margin: 12px 120px;
     padding: 3px 3px;
     border-radius: 27px;
 }
 
 
-form input {
+/* form input {
     display: block;
-    width: 316px;
+    width: 400px;
     margin: 4px auto;
+} */
+h1{
+    width: 113px;
+    margin-left: 49px;
+    font-size: 80px;
+    color: #fff;
+    margin-top: 98px;
+    display: inline-block;
 }
 
 .details{
-    margin: 27px 121px;
+    margin: 83px;
+    margin-top: 50px;
 }
 
 .title{
     text-align: center;
-    margin-top: 29px;
+    margin-top: 19px;
+    /* width: 103px; */
+    font-weight: 800;
+    font-size: larger;
+}
+
+.ininput{
+    display: block;
+    width: 400px;
+    margin: 4px auto;
+    margin: 2px auto;
+    height: 40px;
+    border-color: #00FFBF;
+    outline: none;
+    padding: 10px;
+    border-radius: 9px;
+    box-shadow: 0px 0px 4px 0px rgb(79 129 129);
+}
+
+.ininput2{
+    margin:40px;
+    width:80px;
+    margin-left:250px;
+    height:30px;
+    padding:10px;
+    padding-bottom:25px;
+    border-radius: 10px;
+    border-color: aqua;
+    outline: none;
+    box-shadow: 0px 0px 10px 0px rgb(79, 129, 129);
+}
+
+.ininput2:hover{
+    background: linear-gradient(aqua,aquamarine);
+    transition: .5s ease;
+    color:white;
+    cursor:pointer;
+
+}
+
+.content{
+    margin-top:40px;
+}
+
+div .button{
+    height: 100px;
 }

@@ -41,7 +41,7 @@ if(isset($_POST['submit']))
    }else{
     ?>
        <script>
-           alert("EROOR");
+           alert("ERROR");
        </script>
        <?php
    }   
@@ -60,14 +60,12 @@ if(isset($_POST['submit']))
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Admission</title>
+    <title>Patient SIGNUP</title>
     <link rel="stylesheet" href="css/EmployeeADD.css" class="css">
 </head>
 <body>
     <div class="left">
-        <h1>Sign up</h1>
-        <h3 style="color:white; , font: size 150px; ">and</h3>
-        <h1>Book an Appointment</h1>
+        <h1>Sign up and Book an Appointment</h1>
         </div>
     <div class="container">
         <div class="title">SIGNUP</div>
@@ -76,31 +74,31 @@ if(isset($_POST['submit']))
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details"> Name</span>
-                        <input type="text" name=" PAT_NAME" value="<?php echo $PAT_NAME; ?>" placeholder="Enter employee Name" required>
+                        <input type="text" name=" PAT_NAME" value="<?php echo $PAT_NAME; ?>" placeholder="Enter your name" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Age</span>
-                        <input type="text" name="AGE" value="<?php echo $AGE; ?>" placeholder="Enter employee Location" required>
+                        <input type="text" name="AGE" value="<?php echo $AGE; ?>" placeholder="Enter your age" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Gender</span>
-                        <input type="text" name="GENDER" value="<?php echo $GENDER; ?>" placeholder="Enter employee Location" required>
+                        <input type="text" name="GENDER" value="<?php echo $GENDER; ?>" placeholder="Enter your gender" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Location</span>
-                        <input type="text" name="PAT_LOCATION" value="<?php echo $PAT_LOCATION; ?>" placeholder="Enter employee Phone Number" required>
+                        <input type="text" name="PAT_LOCATION" value="<?php echo $PAT_LOCATION; ?>" placeholder="Enter your location" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Phone</span>
-                        <input type="text"  name="PHONE" value="<?php echo $PHONE; ?>" placeholder="Salary" required>
+                        <input type="text"  name="PHONE" value="<?php echo $PHONE; ?>" placeholder="Enter your phone number" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Email</span>
-                        <input type="text" name="email" value="<?php echo $email; ?>" placeholder="Pharmacy ID" required>
+                        <input type="text" name="email" value="<?php echo $email; ?>" placeholder="Enter your email" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Password</span>
-                        <input type="password" name="password"  value="<?php echo $_POST['password']; ?>" placeholder="Enter password" required>
+                        <input type="password" name="password"  value="<?php echo $_POST['password']; ?>" placeholder="Enter  password" required>
                     </div>
                 </div>
              

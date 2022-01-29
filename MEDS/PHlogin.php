@@ -64,9 +64,8 @@ if (isset($_POST['submit'])) {
         <br><br>    
         <input type="checkbox" id="check">    
         <span>Remember me</span>    
-        <br><br>    
-        <a class="left" href="#">Forgot Password?</a>  <br>  
-        <a  class="right" href="PharmacyRIG.php">Create an new account</a>    
+        <br><br>     
+        <a  class="right" href="PharmacyRIG.php">Create an new account?</a>    
     </form>     
 </div>    
 </body>    

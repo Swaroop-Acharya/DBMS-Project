@@ -1,6 +1,9 @@
 body {
     background: -webkit-linear-gradient(#71b7e6, #00FFBF);
 }
+*{
+    font-family: 'Open Sans', sans-serif;
+}
 
 .navdiv {
     background: -webkit-linear-gradient(#71b7e6, #00FFBF);
@@ -9,7 +12,7 @@ body {
 
 .navbar {
     display: grid;
-    /* background-color: blue; */
+    background: linear-gradient(to right ,#71b7e6 , #00FFBF);
     height: 80px;
     width: 100%;
     margin-top: 6px;
@@ -26,7 +29,6 @@ h3{
     text-transform: uppercase;
     font-weight: 300;
     margin-bottom: 15px;
-    font-family: 'Poppins',sans-serif;
     margin-left: 19px;
   }
 
@@ -34,7 +36,6 @@ h3{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Audiowide", sans-serif;
     font-size: 20px;
     color: white;
     /* position: absolute; */
@@ -66,8 +67,8 @@ h3{
     color: white;
     margin-top: 10px;
     font-size: 20px;
+    margin-left: 400px;
     position: absolute;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-transform: uppercase;
 }
 
@@ -165,4 +166,18 @@ h3{
     padding: 10px;
     border: 1px solid #fff;
     /* border-radius: 8px; */
+}
+
+.pr{
+    padding: 10px;
+    margin-top: 0px;
+    margin-left: 1px;
+    background: lightblue;
+    border: 1px solid white;
+    border-radius: 2px;
+}
+
+p{
+    margin-left: 20px;
+    color: blue;
 }

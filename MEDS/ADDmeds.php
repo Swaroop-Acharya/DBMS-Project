@@ -1,14 +1,23 @@
-
+                                            <!-- PHP SCRIPT -->
 <?php
-
+session_start();
 //Connecting to our DATA base[needmeds]
 include 'connection.php' ;
+
+$P_NAME= $_SESSION['P_NAME'];
+
+//QUERY:To extract Pharmacy ID
+$quer="select P_ID from pharmacy where P_NAME='$P_NAME' ";
+
+$ex=mysqli_query($con,$quer);
+$arr=mysqli_fetch_array($ex);
+$P_ID=$arr['P_ID'];
+
 
 //After clicking Submit button the following will be EXECUTED
 if(isset($_POST['submit']))
 {
     //Asigning Variables[php Variables] to the Table variables
-    $P_ID=$_POST['P_ID'];
     $S_ID=$_POST['S_ID'];
     $M_ID=$_POST['M_ID'];
     $M_NAME=$_POST['M_NAME'];
@@ -63,10 +72,6 @@ if(isset($_POST['submit']))
         <div class="content">
             <form action="ADDmeds.php" method="post">
                 <div class="user-details">
-                    <div class="input-box">
-                        <span class="details">Pharmacy ID</span>
-                        <input type="text" name="P_ID" placeholder="Pharmacy ID" required>
-                    </div>
                     <div class="input-box">
                         <span class="details">Stock ID</span>
                         <input type="text" name="S_ID" placeholder="Stock ID" required>

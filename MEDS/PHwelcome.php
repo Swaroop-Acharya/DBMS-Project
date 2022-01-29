@@ -33,23 +33,23 @@ if (!isset($_SESSION['P_NAME'])) {
                 <div class="hidlist">
                     <ul class="unlist">
                         <li>
-                            <button><a class="list2" href="EmployeeADD.php">ADD EMPLOYEE</a></button>
+                            <button><a class="list2" target=_block href="EmployeeADD.php">ADD EMPLOYEE</a></button>
                         </li>
                         <li>
-                            <button><a class="list2" href="EmployeeDisplay.php">List</a></button>
+                            <button><a class="list2"  target=_block href="EmployeeDisplay.php">List</a></button>
                         </li>
                     </ul>
                 </div>
             </div>
         </li>
         <li class="dropdown">
-            <a class="list1" href="ADDmeds.php">ADD MEDCINE</a>
+            <a class="list1" target=_block  href="ADDmeds.php">ADD MEDCINE</a>
         </li>
         <form action="" method="post">
 
         
             <li class="dropdown">
-                <a class="list1" href="PHdocD.php">DOCTORS</a>
+                <a class="list1" target=_block href="PHdocD.php">DOCTORS</a>
             </li>
         </form>
         <li>
@@ -64,7 +64,7 @@ if (!isset($_SESSION['P_NAME'])) {
 <form action="#" method="post">
     <input class="psubmit " style="float:right;" type="submit"  name="search" value="Search">
     <input class="psearch " style="float:right;" type="text"  class="search1" placeholder="Enter Patient ID" name="PAT_ID" id="">
-    <p class="ppara" style="float:right;">Search Prescription</p>
+    <p class="ppara" style="float:right;  ">Search Prescription</p>
 </form>
 
 <?php
@@ -88,15 +88,19 @@ if (!isset($_SESSION['P_NAME'])) {
         //Executing the QUERY
         $query=mysqli_query($con,$selectquery);
 
+
+
         //Iterating through Entire table using while loop
         //Using MYSQLI Fetch fuction to show that table
         while($res=mysqli_fetch_array($query))
         {
-     ?>
-
-    <?php  echo "<h4>Your Pharmacy ID : " . $res['P_ID'] . "</h4>";   ?>
-    <?php  echo "<h4>Your Stock ID:S " . $res['P_ID'] . "</h4>";   ?>
-            <?php
+        ?>
+            <?php  echo "<h4>Your Pharmacy ID : " . $res['P_ID'] . "</h4>";   ?>
+            <?php  echo "<h4>Your Stock ID:S " . $res['P_ID'] . "</h4>";   ?>
+            <form action="" method="post">
+               <a href="PHdelete.php?pid=<?php echo  $res['P_ID'] ?>"> <input class="dela" type="button" value="Delete Account"></a>
+            </form>
+        <?php
         }
         ?>
     <section>
