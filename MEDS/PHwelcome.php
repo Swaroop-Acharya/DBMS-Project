@@ -33,7 +33,7 @@ if (!isset($_SESSION['P_NAME'])) {
                 <div class="hidlist">
                     <ul class="unlist">
                         <li>
-                            <button><a class="list2" target=_block href="EmployeeADD.php">ADD EMPLOYEE</a></button>
+                            <button><a class="list2" target=_block href="EMPA.php">ADD EMPLOYEE</a></button>
                         </li>
                         <li>
                             <button><a class="list2"  target=_block href="EmployeeDisplay.php">List</a></button>

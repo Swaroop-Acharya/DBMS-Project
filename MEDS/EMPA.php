@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Admission</title>
-    <link rel="stylesheet" href="css/EmployeeADD.css" class="css">
+    <link rel="stylesheet" href="css/EMPA.css" class="css">
 </head>
 <body>
     <div class="left">
@@ -26,10 +26,15 @@
                     </div>
 
                     
-                    <legend>GENDER*</legend>
-                
-                    Male <input type="radio" name="gender" id="male" required>
-                    Female <input type="radio" name="gender" id="female" required>
+                    <div class="row">
+                <div class="col-10">
+                    <label for="gender" required>Gender:</label>
+                </div>
+                <div class="col-90">
+                    <input type="radio" id="Male" name="GENDER" value="Male"/>Male
+                    <input type="radio" id="Female" name="GENDER" value="Female"/>Female
+                </div>
+            </div>
                     <div class="input-box">
                         <span class="details">Phone Number</span>
                         <input type="text"  pattern="[6789]{1}[0-9]{9}" name="PHONE" placeholder="Enter employee Phone Number" required>

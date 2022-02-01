@@ -51,20 +51,21 @@
 
           <h1 class="title">Search, Get Appointments and Medicines now</h1>
           <input type="text" class="search1" placeholder="Search Medicines" name="M_NAME" id="">
-          <a href="#s12">
-          <input type="submit" onclick="show_hide()" name="search" value="Search" class="subbut"></a>
-        </form>
-
+          <!-- <a href="#s12">
+           S </a> -->
+          <!-- <input type="submit" onclick="show_hide()" name="search" value="Search" class="subbut">
+        </form> -->
+        <button name="search" value="Search" class="subbut" href="#s12">Search</button>
         <div class="listall">
-          <button class="list11"><a target="_blank" href="PHdocD.php">List of Doctors</a></button>
-          <button class="list11"><a target="_blank" href="PharmacyDisplay.php">List of Pharmacies</a></button>
+          <button class="list11"><a href="PHdocD.php">List of Doctors</a></button>
+          <button class="list11"><a href="PharmacyDisplay.php">List of Pharmacies</a></button>
         </div>
       </div>
-      <section class="tablesdiv">
+      <section class="tablesdiv" id="s12">
         <h1>PHARMACY</h1>
         <div class="tbl-header">
           <table cellpadding="0" cellspacing="0" border="0">
-            <thead id="s12">
+            <thead>
               <tr>
                 <th>NAME</th>
                 <th>LOCATION</th>
@@ -89,18 +90,27 @@
 
 
                 //Insertion Query [Main-QUERY] for Doctor
-                $search = "select * from stocks where M_NAME='$M_NAME'  ";
+                // $search = "select * from stocks where M_NAME='$M_NAME' and M_NAME in(select M_NAME FROM stocks group by M_NAME  having  count(M_NAME)>1)  ";
 
-                $squery = mysqli_query($con, $search);
+                
+                
+                // SELECT * FROM MYTABLE WHERE NAME IN(SELECT NAME FROM MYTABLE GROUP BY NAME HAVING COUNT(*) =1)
+
+                // $squery = mysqli_query($con, $search);
 
 
-                $result = mysqli_fetch_array($squery);
+                // $result = mysqli_fetch_array($squery);
 
 
-                $P_ID = $result['P_ID'];
+                // $P_ID = $result['P_ID'];
 
                 // Query to select the Entire table [MAIN QUERY]
-                $selectquery = " select  * from pharmacy where P_ID= $P_ID ";
+                // $selectquery = " select  * from pharmacy where P_ID= $P_ID ";
+
+
+               $selectquery="select p.* 
+                             from stocks s,pharmacy p
+                             where  M_NAME='$M_NAME' and s.P_ID = p.P_ID ";
 
 
 

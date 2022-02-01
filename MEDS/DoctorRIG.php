@@ -86,7 +86,7 @@ if(isset($_POST['submit']))
                     </div>
                     <div class="input-box">
                         <span class="details">Phone Number</span>
-                        <input type="text"  name="PHONE" placeholder="Enter your number" value="<?php echo $PHONE; ?>" required>
+                        <input type="text"  pattern="[6789]{1}[0-9]{9}"  name="PHONE" placeholder="Enter your number" value="<?php echo $PHONE; ?>" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Email</span>
@@ -94,7 +94,7 @@ if(isset($_POST['submit']))
                     </div>
                     <div class="input-box">
                         <span class="details">Password</span>
-                        <input type="password"  name="password" placeholder="Enter your password" value="<?php echo $_POST['password']; ?>" required>
+                        <input type="password" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}"  name="password" placeholder="Enter your password" value="<?php echo $_POST['password']; ?>" required>
                     </div>
                 </div>
 
