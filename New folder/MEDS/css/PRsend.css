@@ -1,0 +1,60 @@
+
+.container {
+    float: right;
+    border: 3px solid white;
+    border-radius: 5px;
+    height: 106%;
+    width: 575px;
+    background-color: #fff;
+    margin: 12px 380px;
+    padding: 3px 3px;
+    border-radius: 27px;
+}
+
+.ininput{
+    display: block;
+    width: 400px;
+    margin: 4px auto;
+    margin: 2px auto;
+    height: 40px;
+    border-color: #00FFBF;
+    outline: none;
+
+    border-radius: 9px;
+    box-shadow: 0px 0px 4px 0px rgb(79 129 129);
+}
+
+.ininput2{
+    margin: 40px;
+    width: 80px;
+    margin-left: 492px;
+    height: 30px;
+    margin-top: -19px;
+    padding: 10px;
+    margin-bottom: 26px;
+    padding-bottom: 25px;
+    border-radius: 10px;
+    border-color: aqua;
+    outline: none;
+    box-shadow: 0px 0px 10px 0px rgb(79, 129, 129);
+}
+.title{
+    text-align: center;
+    margin-top: 3px;
+}
+
+.ininput2:hover{
+    background: linear-gradient(aqua,aquamarine);
+    transition: .5s ease;
+    color:white;
+    cursor:pointer;
+
+}
+
+.content{
+    margin-top:40px;
+}
+
+div .button{
+    height: 100px;
+}
